@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.5'
+ruby '2.7.7'
 
 gem 'rails', '~> 5.2.2'
 gem 'pg', '1.1.3'
@@ -9,6 +9,7 @@ gem 'puma', '~> 3.11'
 
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
+gem 'bcrypt', '~> 3.1.20'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -20,9 +21,19 @@ gem 'http'
 gem 'parallel'
 gem 'bootsnap', '>= 1.1.0', require: false
 
+gem 'redis'
+gem 'sidekiq'
+gem 'sidekiq-scheduler'
+gem 'activejob-uniqueness'
+
+gem 'dotenv-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
 end
 
 group :development do

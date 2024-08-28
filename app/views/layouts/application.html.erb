@@ -8,6 +8,30 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
+    <ul class="menu">
+      <li>
+        <%= link_to "Home", root_path %>
+      </li>
+      <li>
+        <%= link_to "New Order", new_order_path %>
+      </li>
+      <% if current_user %>
+        <li>
+          <%= link_to "Listing Orders", admin_orders_path %>
+        </li>
+        <li>
+          <%= link_to "Listing Products", products_path %>
+        </li>
+        <li>
+          <%= link_to 'Log out', session_path(current_user), data: { method: :delete } %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to "Login", new_session_path %>
+        </li>
+      <% end %>
+    </ul>
+   
     <%= yield %>
   </body>
 </html>

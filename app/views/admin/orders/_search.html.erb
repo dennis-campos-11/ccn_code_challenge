@@ -1,0 +1,30 @@
+<%= form_with url: admin_orders_path, method: :get, local: true do |f| %>
+  <div class="field inline">
+    <%= f.label :product_id %><br>
+    <%= f.select :product_id, @products.pluck(:name, :id), include_blank: true, selected: params[:product_id] %>
+  </div>
+  <div class="field inline">
+    <%= f.label :customer_name %><br>
+    <%= f.text_field :customer_name, value: params[:customer_name] %>
+  </div>
+  <div class="field inline">
+    <%= f.label :address %><br>
+    <%= f.text_field :address, value: params[:address] %>
+  </div>
+  <div class="field inline">
+    <%= f.label :zip_code %><br>
+    <%= f.number_field :zip_code, value: params[:zip_code] %>
+  </div>
+  <div class="field inline">
+    <%= f.label :shipping_method %><br>
+    <%= f.text_field :shipping_method, value: params[:shipping_method] %>
+  </div>
+  <div class="field inline">
+    <%= f.label :status %><br>
+    <%= f.select :status, order_statuses_options, include_blank: true, selected: params[:status] %>
+  </div>
+  <div class="actions inline">
+    <%= f.submit "Search" %>
+    <%= link_to "Clear", admin_orders_path %>
+  </div>
+<% end %>

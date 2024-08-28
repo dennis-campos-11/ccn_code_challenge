@@ -34,11 +34,19 @@ a {
 div {
   &.field, &.actions {
     margin-bottom: 10px;
+
+    &.inline {
+      display: inline-block;
+    }
   }
 }
 
 #notice {
   color: green;
+}
+
+#alert {
+  color: red;
 }
 
 .field_with_errors {
@@ -69,5 +77,15 @@ div {
   ul li {
     font-size: 12px;
     list-style: square;
+  }
+}
+
+.menu { 
+  margin-bottom: 30px;
+
+  li{
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 20px;
   }
 }

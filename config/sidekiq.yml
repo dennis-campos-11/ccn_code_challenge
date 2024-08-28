@@ -1,0 +1,16 @@
+:concurrency: 3
+:timeout: 60
+:verbose: true
+:queues:
+  - critical
+  - default
+  - mailers
+  - active_storage_analysis
+  - active_storage_purge
+
+:scheduler:
+  :schedule:
+    update_shipment_status_from_pending_orders:
+      class: UpdatePendingOrdersShippingStatusJob
+      queue: :critical
+      every: '15m' # Runs when second = 0, every 15 minutes

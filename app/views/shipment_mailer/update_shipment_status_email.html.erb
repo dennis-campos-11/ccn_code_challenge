@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>Order <%= @order.id %> status was changed to <%= @order.status %>!</p>
+    <p>
+    Order details<br>
+    --------------------------
+    </p>
+    <p>Customer name: <%= @order.customer_name %></p>
+    <p>Address: <%= @order.address %></p>
+    <p>Zip Code: <%= @order.zip_code %></p>
+    <p>Shipment ID: <%= @order.shipment_id %></p>
+    <p>Status: <%= @order.status %></p>
+  </body>
+</html>

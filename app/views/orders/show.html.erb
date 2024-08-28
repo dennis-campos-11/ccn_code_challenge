@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @order.product.name %>
+</p>
+
+
+<p>
+  <strong>Customer Name:</strong>
+  <%= @order.customer_name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @order.address %>
+</p>
+
+<p>
+  <strong>Zip Code:</strong>
+  <%= @order.zip_code %>
+</p>
+
+<p>
+  <strong>Shipping Method:</strong>
+  <%= @order.shipping_method %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @order.status %>
+</p>
+
+<p>
+  <strong>Created at:</strong>
+  <%= @order.created_at %>
+</p>
+
+<%= link_to 'Home', root_path %>
+<%= link_to 'Orders', admin_orders_path if current_user %>

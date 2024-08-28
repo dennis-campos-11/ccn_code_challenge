@@ -1,0 +1,21 @@
+<p id="alert"><%= alert %></p>
+
+<h1>Login page</h1>
+
+<%= form_with model: @user, url: sessions_path do |f| %>
+
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.email_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br>
+    <%= f.password_field :password %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit 'Login' %>
+  </div>
+
+<% end %>
